@@ -1,18 +1,13 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/**/*.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/graphql"
-    }
-  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "env": {
     "NODE_ENV": "production"
+  },
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "@vercel/node@3.x"
+    }
   }
 }
