@@ -12,7 +12,9 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "allowJs": true,
+    "moduleResolution": "node"
   },
   "include": ["api/**/*", "schema/**/*"],
   "exclude": ["node_modules", "dist"]
