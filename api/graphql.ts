@@ -1,5 +1,6 @@
 import { ApolloServer } from 'apollo-server';
 import { schema } from '../schema';
+import { VercelRequest, VercelResponse } from '@vercel/node';
 
 const server = new ApolloServer({
   schema,
@@ -12,5 +13,13 @@ const server = new ApolloServer({
   },
 });
 
-// Export handler for Vercel serverless functions
-export default server.createHandler();
+const startServer = server.start();
+
+export default async (req: VercelRequest, res: VercelResponse) => {
+  await startServer;
+  await server.createHandler()(req, res);
+};
+
+export const config = {
+  runtime: 'nodejs18.x',
+};
