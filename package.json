@@ -1,0 +1,24 @@
+{
+  "name": "nexus-app",
+  "version": "1.0.0",
+  "description": "Nexus GraphQL App",
+  "main": "api/graphql.js",
+  "scripts": {
+    "dev": "node -r ts-node/register api/graphql.ts",
+    "build": "tsc",
+    "start": "node api/graphql.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nexus/schema": "^0.20.0",
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}
